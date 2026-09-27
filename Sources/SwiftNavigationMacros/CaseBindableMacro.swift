@@ -1,5 +1,5 @@
 #if CasePaths
-  import CasePathsMacrosSupport
+  import SwiftNavigationCasePathsSupport
   import SwiftDiagnostics
   package import SwiftSyntax
   import SwiftSyntaxBuilder

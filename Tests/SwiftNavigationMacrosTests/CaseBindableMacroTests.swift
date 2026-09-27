@@ -1,5 +1,5 @@
 #if CasePaths && canImport(MacroTesting)
-  import CasePathsMacrosSupport
+  import SwiftNavigationCasePathsSupport
   import MacroTesting
   import SnapshotTesting
   import SwiftNavigationMacros

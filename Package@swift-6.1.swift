@@ -123,12 +123,22 @@ let package = Package(
         .product(name: "IssueReportingTestSupport", package: "xctest-dynamic-overlay"),
       ]
     ),
+    // A copy of swift-case-paths CasePathsMacrosSupport as a target without a product: as a
+    // product of a directly depended-on package it makes SwiftPM drop the swift-syntax prebuilts.
+    .target(
+      name: "SwiftNavigationCasePathsSupport",
+      dependencies: [
+        .product(name: "SwiftDiagnostics", package: "swift-syntax"),
+        .product(name: "SwiftSyntax", package: "swift-syntax"),
+        .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
+        .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
+      ]
+    ),
     .macro(
       name: "SwiftNavigationMacros",
       dependencies: [
-        .product(
-          name: "CasePathsMacrosSupport",
-          package: "swift-case-paths",
+        .target(
+          name: "SwiftNavigationCasePathsSupport",
           condition: .when(traits: ["CasePaths"])
         ),
         .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
