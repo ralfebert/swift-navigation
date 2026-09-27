@@ -1,7 +1,7 @@
-import SwiftDiagnostics
-import SwiftSyntax
-import SwiftSyntaxBuilder
-import SwiftSyntaxMacros
+public import SwiftDiagnostics
+public import SwiftSyntax
+public import SwiftSyntaxBuilder
+public import SwiftSyntaxMacros
 
 public struct CasePathableMacro {
   static let moduleName = "CasePaths"
